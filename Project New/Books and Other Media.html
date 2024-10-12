@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Books and Other Media</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="project3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <img src="images/Banner Logo 1.png" width="1000" height="210">
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </header>
+
+    <nav class="side-nav">
+        <ul class="menu">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Models and Painting.html" class="active">Painting and Models</a></li>
+            <li><a href="The Tabletop Game.html">The Tabletop Game</a></li>
+            <li><a href="Books and Other Media.html">Books and Other Media</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div>
+            <p>Information about models and painting goes here.</p>
+            <!-- Additional content for this page -->
+        </div>
+    </main>
+
+    <div class="button-container">
+        <a href="Models and Painting.html"><button>Models and Painting</button></a>
+        <a href="The Tabletop Game.html"><button>The Tabletop Game</button></a>
+        <a href="Books and Other Media.html"><button>Books and Other Media</button></a>
+    </div>
+
+    <div class="sides slowFade">
+        <div class="slide">
+            <img src="images/img1.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="images/img2.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="images/img3.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+            <img src="images/img4.jpg" alt="Image 4">
+        </div>
+    </div>
+
+    <script>
+        // Slideshow script
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.opacity = "1";
+            setTimeout(showSlides, 4000);
+        }
+
+        // Menu toggle script
+        const links = document.querySelectorAll('.menu a');
+        const sections = document.querySelectorAll('.content-section');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideNav = document.querySelector('.side-nav');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (event) {
+
+            });
+        });
+
+        menuToggle.addEventListener('click', function () {
+            sideNav.classList.toggle('open');
+        });
+
+        sideNav.addEventListener('mouseleave', function () {
+            this.classList.remove('open');
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Games Workshop. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
